@@ -1,0 +1,64 @@
+//
+// Copyright (c) 2015-present, conichi GmbH.
+// All rights reserved.
+//
+//
+// Created by Anton Domashnev on 02/09/16.
+//
+//
+
+#include "Warnings.xcconfig"
+
+SWIFT_VERSION = 3.0
+CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
+
+
+// Architectures to build
+ARCHS = $(ARCHS_STANDARD)
+
+
+// Static Analyzer - Analysis Policy
+RUN_CLANG_STATIC_ANALYZER = YES
+CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep
+CLANG_STATIC_ANALYZER_MODE = shallow
+
+
+// Versioning System
+//
+// Selects the process used for version-stamping generated files.
+//
+// None - Use no versioning system. []
+// Apple Generic - Use the current project version setting. [apple-generic]
+
+VERSIONING_SYSTEM = apple-generic
+
+
+// Enable Bitcode
+//
+// Activating this setting indicates that the target or project should generate bitcode
+// during compilation for platforms and architectures which support it.  For Archive
+// builds, bitcode will be generated in the linked binary for submission to the app
+// store.  For other builds, the compiler and linker will check whether the code complies
+// with the requirements for bitcode generation, but will not generate actual bitcode.
+
+ENABLE_BITCODE = $(inherited)
+
+
+// Always Embed Swift Standard Libraries
+//
+// Always embed the Swift standard libraries in the target's products, even if the target
+// does not contain any Swift code.  For example, this should be enabled if the target is
+// embedding other products which contain Swift, or if it is a test target which does not
+// contain Swift but which is testing a product which does.  This setting only applies to
+// wrapped products, not to standalone binary products.
+
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = $(inherited)
+
+
+// Enable Modules (C and Objective-C)
+//
+// Enables the use of modules for system APIs.  System headers are imported as semantic
+// modules instead of raw headers.  This can result in faster builds and project
+// indexing.
+
+CLANG_ENABLE_MODULES = YES
